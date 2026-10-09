@@ -1,16 +1,30 @@
-export interface FestivalScheduleItem {
-  dayNumber: number;
+export interface EventItem {
+  day: number;
   date: string;
   title: string;
   theme: string;
-  venue: string;
-  coordinatorContact?: string;
+  venue?: string;
+  img: string;
+  regLink?: string;
+  details: string;
 }
 
-export interface TelemetryEvent {
-  eventId: string;
-  eventType: 'SCHEDULE_VIEW' | 'REGISTRATION_CLICK' | 'COORDINATOR_QUERY';
-  targetDay?: number;
-  timestamp: string;
-  userAgent?: string;
+export interface CoordinatorContact {
+  name: string;
+  phone?: string;
+  role?: string;
+}
+
+export interface EventCoordinatorGroup {
+  event: string;
+  contacts: CoordinatorContact[];
+}
+
+export interface Leadership {
+  conveners: string;
+  convenersTitle: string;
+  chiefConvener: string;
+  chiefConvenerTitle: string;
+  principal: string;
+  principalTitle: string;
 }
